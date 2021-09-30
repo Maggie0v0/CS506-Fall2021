@@ -6,11 +6,11 @@ def read_csv(csv_file_path):
     file = open(csv_file_path,"r")
     X = []
     for i in file.readlines():
-        cur = i[:-1].split(',')
+        cur = i.split(',')
         for j in range(len(cur)):
             if cur[j] == '?':
                 cur[j] = float('nan')
             else:
                 cur[j] = float(cur[j])
-        X.append(cur[:])
+        X.append(cur)
     return X
