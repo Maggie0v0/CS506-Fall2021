@@ -20,6 +20,13 @@ def jaccard_dist(x, y):
     return float(len(intersect)/len(union))
 
 def cosine_sim(x, y):
-    raise NotImplementedError()
+    sum1, sum2, sum3 = 0
+    for i in range(len(x)):
+        a = x[i]
+        b = y[i]
+        sum1 += a*a
+        sum2 += b*b
+        sum3 += a*b
+    result = sum3/((sum1*sum2)^(1/2))
 
 # Feel free to add more
